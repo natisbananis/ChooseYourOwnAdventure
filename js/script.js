@@ -44,7 +44,7 @@ function setMusic(level) {
 
 function setImage(level) {
     var image = level.background_image || game.background_image || "";
-    $("#background-image").css("background-image", "url(./img/" + image + ")");
+    $("#background-image").css("background-image", "url(" + image + ")");
 }
 
 $.fn.extend({

@@ -2,28 +2,28 @@
 
 var game = {
     music: "98_Lost_Mine.mp3",
-    background_image: "intro-bg.jpg",
+    background_image: "https://i.pinimg.com/originals/a4/45/b8/a445b8cd3f0adc4a06580c4b2fc00ff5.jpg",
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "You are hunting a demon who kiddnaped your daugther. You have no experience in hunting. Luckily you came across two good-looking well trained hunters named, Sam & Dean Winchester at a bar. ",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "Ask them for help?",
+                    nextLevel: "help",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "No, you have to do this alone",
+                    nextLevel: "alone",
                 },
             ]
         },
 
-        cave: {
+        help: {
             background_image: "fire.gif",
             music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            message: "",
             choices: [
                 {
                     text: "Start over",
@@ -32,8 +32,8 @@ var game = {
             ]
         },
 
-        field: {
-            message: "Some adventurer you are...",
+        alone: {
+            message: "You were killed by a Windego because you have no idea how to kill it.",
             choices: [
                 {
                     text: "Start over",
