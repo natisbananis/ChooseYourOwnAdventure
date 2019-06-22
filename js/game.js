@@ -116,17 +116,82 @@ var game = {
             choices: [
                 {
                   text:"You speak",
-                  nextLevel:"",
+                  nextLevel:" failedMission",
                 },
                 
                 {
                   text:"Sam speaks",
-                  nextLevel:"",
+                  nextLevel:"dialogue",
                 },
             
             
             ]
         },
+        //A FAILED CHOICE
+        failedMission: {
+            message: "As you speak with them, they get noticably nervous and uncomfortable. In the end, they tell you nothing and run away. MISSION FAILED.",
+            choices: [
+                {
+                    text: "Go Back",
+                    nextLevel: "friendsSam",
+                },
+            
+            ]
+        },
+        dialogue: {
+            message: "Sam sends the kids a adorable and friendly smile, 'Hey! If you guys will, can we ask you few questions?'. They kids feel comfortablr around Sam and reply, 'Sure.' one of them says. You speak and show them a photo of a white-haired, blue-eyed, freckled, teenage girl, 'Have you seen this girl?'. The kids are hesitant, but reply, 'Yeah, I've seen her, she was at our party yesterday.' Another boy interuppts, 'I saw her leave with somebody to the backyard, towards the forest.' You look down, worry filled you. Sam gingerly touched your shoulder, he gives a reassuring smile, 'It's fine, she's fine.' You look up at Sam and smile. You look over his shoulder and see a person in a hoodie, eavesdropping.   ",
+            choices: [
+                {
+                    text: "Ignore the stranger",
+                    nextLevel: "leave",
+                },
+                
+                {
+                    text: "Confront the stranger",
+                    nextLevel: "chase",
+                }
+            
+            ]
+        },
+        chase: {
+            message: "",
+            choices: [
+                {
+                    text: "",
+                    nextLevel:"",
+                }]
+        },
+        leave: {
+            message: "You stare back at the kids and smile, thanking them for their time. You head towards your car, suddenly Sam got a phone call, 'It's from Dean.' He claims. You at the entrance of the car for Sam. Sam finishes his call, 'Dean found something.' You drive all the way to Dean. As you arrive, you see Dean joined with a man in a trenchcoat. 'Hey, Cas! When did you get here?' Sam yells. You notice Dean and 'Cas' being oddly close. ",
+            choices: [
+                {
+                    text: "'Are you a couple?'",
+                    nextlevel: "destiel2",
+                },
+                
+                {
+                    text: "Stay Silent",
+                    nextLevel: "headingIn",
+                },
+            
+            ]
+        },
+        destiel2: { 
+            message: "Dean is taken back by your accusation. Dean shakes his furiously. Cas looks to the ground, slightly blushing. An awkward silence falls. Sam breaks the silence, 'I think we should head in now.' You nod, agreeing. Dean walks toward the wood and starts following the trail of blood. The deeper into the woods you go, the more harder is is to see the blood. Eventually, there is no blood left, but instead 2 paths. You inspect the left path, in the distance you see old bricks. You inspect the right path, you molding wood. You ponder on which path, left or right? ",
+            choices: [
+                {
+                    text: "Left?",
+                    nextLevel: "tower",
+                },
+                
+                {
+                    text: "Right?",
+                    nextLevel: "cabin",
+                },
+            
+            ]
+        },
+        
         
         
         
@@ -296,31 +361,43 @@ var game = {
             
             ]
         },
-        //the folling 2 connects. 
+        // At the end of every branch, they all connect by going into the woods and choosing a path. 
         samShipsIt: {
-            message: "Sam chuckles and whispers back, 'No, but those 2 are helplessly in love with eachother. They're both just too dense to notice.' You chuckle. 'What are you two whipering about?' Dean questions. 'Nothing!' Sam quickly replies. You question Castiel, 'When did you get here?' Castiel replies, 'I was bored at our home and wanted to see Dean, so I did. I also helped him question those kids.' You nod. ",
+            message: "Sam chuckles and whispers back, 'No, but those 2 are helplessly in love with eachother. They're both just too dense to notice.' You chuckle. 'What are you two whipering about?' Dean questions. 'Nothing!' Sam quickly replies. You question Castiel, 'When did you get here?' Castiel replies, 'I was bored at our home and wanted to see Dean, so I did. I also helped him question those kids.' You nod. You wave your hand, gesturing for them to follow you. You head in the forest, following the blood trail. The trail stops, showing 2 paths. Which path do you choose? Left? Right? ",
             choices: [
                 {
-                    text: "next,",
-                    nextLevel: "forest",
+                    text: "Left?",
+                    nextLevel: "tower",
                 },
+                
+                {
+                    text: "Right?",
+                    nextLevel: "cabin",
+                }
             
             ]
         },
         destielsad: {
-            message: "Dean looks at you in shock, and then stutters, 'N-no! Me and Cas? Absolutley NOT!' You look toward at Cas and see pure sadness in his eyes. Dean looks toward Cas, Cas immediatley changes his look. An awkward silence falls between you four, so you question Cas, 'So... When did you get here Castiel?' Castiel replies, with an unnoticable sadness in his voice, 'I was bored at our home and wanted to see Dea- wanted to see if I could help.' You nod, slowly. ",
+            message: "Dean looks at you in shock, and then stutters, 'N-no! Me and Cas? Absolutley NOT!' You look toward at Cas and see pure sadness in his eyes. Dean looks toward Cas, Cas immediatley changes his look. An awkward silence falls between you four, so you question Cas, 'So... When did you get here Castiel?' Castiel replies, with an unnoticable sadness in his voice, 'I was bored at our home and wanted to see Dea- wanted to see if I could help.' You nod, slowly. You turn your head toward the forest, gesturing for the group to head in. Dean takes the first step. Everbody follows the trail of blood, soon the trail ends, you see two paths facing the opposite direction. Left or Right? ",
             choices: [
                 {
-                    text: "next,",
-                    nextLevel: "forest",
+                    text: "Left?,",
+                    nextLevel: "cabin",
+                },
+                
+                {
+                    text: "Right", 
+                    nextLevel: "tower",
                 },
             
             ]
         },
+       
+        
             // A path to go to the after-party with Dean
         afterPartyDean: {
             background_image:"https://thenewswheel.com/wp-content/uploads/2017/06/Dean-Winchester-with-Chevrolet-Impala-1967-supernatural-31507862-1450-963.jpg",
-            message:"You and Dean head toward Dean's Impala, Sam taking your car to talk with your daughter's friends. You reach over to change the music, but Dean smacks your hand away and says, 'Driver chooses the music, shotgun shuts his cakehole.' You pout. While driving, you hear wings flapping. You turn around and see a blue-eyed, dark-haired man in a trenchcoat.",
+            message:"You and Dean head toward Dean's Impala, Sam taking your car to talk with your daughter's friends. You reach over to change the music, but Dean smacks your hand away and says, 'Driver chooses the music, shotgun shuts his cakehole.' You pout. While driving, you hear rustling. You turn around and see a blue-eyed, dark-haired man in a trenchcoat.",
             choices: [
                 {
                   text:"Scream",
@@ -352,7 +429,7 @@ var game = {
         // Continuing path with Dean 
         castiel: {
          background_image: "https://thewinchesterfamilybusiness.com/images/SeasonTwelve/12-10LilySunderHasSomeRegrets/12.10_0338_Cas_in_car.jpg", 
-            message:"Dean notices you staring at the stranger. 'Hey, Cas. Y/N, this is Castiel, he's a literal Angel.' 'Hello, Y/N.' Castiel said in a gruffed voice. 'Hello, Castiel' You replied. Castiel turns toward Dean,'Hello, Dean.' Dean replied with, 'Watcha need, Cas?' 'Nothing, I was bored at the bunker. I wanted to see you.' ",
+            message:"Dean notices you staring at the stranger. 'Hey, Cas. Y/N, this is Castiel.' 'Hello, Y/N.' Castiel said in a gruffed voice. 'Hello, Castiel' You replied. Castiel turns toward Dean,'Hello, Dean.' Dean replied with, 'Watcha need, Cas?' 'Nothing, I was bored at the bunker. I wanted to see you.'  ",
             choices: [
                 {
                     text: "'Are you two a couple?",
@@ -465,7 +542,7 @@ var game = {
         },
         death6: {
             //DEATH
-            message: "You toward the woods, Dean still on the phone, not noticing. As you go deeper into the woods, you fall and trip and a branch. You hit your on a sharp rock, blood following out of your head. Your vision is blurry and you see Dean running towards you. He holds your head, helplessly yelling, 'Help, please!'. Your hand goes limp, Dean stares, a tear slipping out of his eyes. Another body falls on the weight of his shoulders.",
+            message: "You head toward the woods, Dean still on the phone and Castiel distracted with something, both of them not noticing. As you go deeper into the woods, you fall and trip and a branch. You hit your head on a sharp rock, blood flowing out of your head. Your vision is blurry and you see Dean and Cas running towards you. Dean holds your head, Dean whispers, 'No, no, no, you've got to hold on, for your daughter.' Your hand goes limp, Dean and Castiel stare, guilt portayed in Dean's eyes and pity in Castiel's. Another body falls on the weight of Dean's shoulders.",
             choices: [
                 {
                     text: "Go back",
@@ -477,20 +554,24 @@ var game = {
         },
         safe3: {
             //
-            message: "You see Sam get out of your car. You run towards you car to see if it was well taken care of, you see no scratches. Sam sees you, smiles and rolls his eyes. Sam looks toward Castiel and says, 'Hey, Cas! When did you get here?' Castiel replies, ' ",
+            message: "You see Sam get out of your car. You run towards you car to see if it was well taken care of, you see no scratches. Sam sees you, smiles and rolls his eyes. Sam looks toward Castiel and says, 'Hey, Cas! When did you get here?' Castiel replies, 'I've been here for awhile now. I was bored at the bunker and I wanted to see Dean.' Sam nods, smiling. 'So, what did you guys find?' Sam questions. You respond to Sam, 'I found a trail of blood leading to the woods.' 'What are we waiting for?' Dean exclaims. You head into the woods, when suddenly, the trail ends. You confronted by two paths going opposite directions, which path do you take left or right?  ",
             choices: [
                 {
-                    text: "",
-                    nextLevel: "",
+                    text: "Left?",
+                    nextLevel: "tower",
                 },
                 
                 {
-                    text: "",
-                    nextLevel: "",
+                    text: "Right?",
+                    nextLevel: "cabin",
                 },
             
             ]
         },
+        //     ALL 4 PATHS CONNECT
+        cabin: {
+            message: "",
+        }
         
         
         

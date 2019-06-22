@@ -323,4 +323,5 @@ body {
 
 #background-image {
   background-size: contain;
+  filter: alpha(opacity=50);
 }
